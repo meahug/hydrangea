@@ -1,0 +1,341 @@
+<!-- The originial version of this template was made by Johnathan Soma and then messed with and customized by Aaron Reiss -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Syne:wght@700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #1d1d1c;
+        color: #fff;
+        font-family: Spectral, georgia, 'Times New Roman', Times, serif;
+      }
+
+
+      h1{
+        max-width: 50%;
+        margin: 8rem auto 6rem auto;
+        font-size:56px;
+        font-family: Syne, Helvetica, Arial, sans-serif;
+        font-weight:700;
+        color: #aaa6f9;
+        }
+
+        h2{
+          font-size:24px;
+          margin: 2rem auto 2rem auto;
+          max-width: 50%;
+          font-family: Syne, Helvetica, Arial, sans-serif;
+          font-weight:700;
+        color: #aaa6f9;
+        }
+      
+      p{
+        max-width: 50%;
+        font-family: Spectral, georgia, 'Times New Roman', Times, serif;
+        margin: 0 auto 2rem auto;
+        font-size: 19px;
+      }
+      
+      
+      #scrolly {
+        position: relative;
+        padding: 1rem;
+      }
+
+      .scrolly-overlay {
+        position: relative;
+        padding: 0;
+        max-width: 35rem;
+        margin-left: 2px;
+        margin-right: auto;
+      }
+
+      .sticky-thing {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        z-index: 0;
+        top: 0;
+        height: 100vh;
+        /* Center everything inside */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .step {
+        margin: 0 auto 2rem auto;
+        margin-bottom: 25rem;
+        color: black;
+        text-align: left;
+        font-family: Spectral, georgia, 'Times New Roman', Times, serif;
+        font-weight:300;
+        font-size: 19px;
+        color: #fff;
+      }
+
+      .step p {
+        padding: 1rem;
+        font-size: 1.25rem;
+        border: black;
+      }
+
+      .photoDiv {
+        width: 65%;
+        margin-right: 0px;
+        margin-left: auto;
+        display: block;
+      }
+
+      .hidden { visibility: hidden; }
+
+      /* When it's less than 700 pixels wide, do normal scrollytelling */
+      @media only screen and (min-width: 700px) {
+        #scrolly.side-by-side {
+          display: flex;
+        }
+
+        #scrolly.side-by-side > div {
+          flex-basis: 0;
+          flex-grow: 1;
+          flex-shrink: 1;
+          padding: 0.75em;
+        }
+
+        #scrolly.side-by-side .scrolly-overlay {
+          margin-top: 70vh;
+          order: 0;
+          /* Change these to adjust sizing options */
+          min-width: 15rem;
+          max-width: 20rem;
+        }
+
+        #scrolly.side-by-side .sticky-thing {
+          order: 1;
+          flex-grow: 2;
+        }
+      }
+    </style>
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+	
+  </head>
+
+  <body>
+
+  <p></p>
+  <h1><img src="photohydrangea.png" style="max-width:300px; float:left; margin-right: 3rem;">
+    What the flowers around us say about the earth beneath our feet</h1>
+
+    <p>
+  In mid-June, the streets of Brooklyn fill with colorful spheres of petals, ranging from <span style ="border-bottom:1px solid #608bfb;">cornflower blue</span> to <span style ="border-bottom:1px solid #9258e8;">violet</span> to <span style ="border-bottom:1px solid #fc48bd;">neon pink</span>.  </p>
+
+  <p>Hydrangeas are hardy plants with visually striking flowers. But they're worth your attention for another reason: their petals broadcast information about the soil beneath them.</p>
+
+  
+      <section id="scrolly">
+        <div class="sticky-thing">
+<!-- Sticky Thing 1 goes below this line -->
+
+<img id="scrollyPhoto" class="photoDiv" src="hydrangeapartial1.png">
+
+<!-- Sticky Thing 1 goes above this line -->
+
+        </div>
+
+        <div class="scrolly-overlay">
+          <div class="step" id="step1">
+            <p>I walked down Prospect Place, a few blocks north of Prospect Park, to document the variety of colors that hydrangea petals flaunt. What's the underlying logic that decides the colors of this faerie-hued display?</p>
+          </div>
+          <div class="step" id="step2">
+            <p>The pink, purple or blue hue of these blooms are determined by the amount of anthocyanin pigment in the petals - which are actually "sepals", modified petals. Anthocyanin levels are determined by the concentration of aluminum ions that the hydrangea's roots can absorb through their soil. 
+              <br><br>Aluminum ions are correlated with soil pH - which tells us whether soil is acidic, neutral, or alkaline. In this sense, hydrangeas can be used as a <b>literal litmus test.</b></p>
+            </p>
+          </div>
+          <div class="step" id="step3">
+            <p>Hydrangea flowers planted in lower pH, more acidic soil are  <span style ="border-bottom:1px solid #608bfb;">blue (approximately pH 4.5 - 5.0)</span>. <br><br> Higher pH, less acidic soil turns hydrangeas <span style ="border-bottom:1px solid #fc48bd;">pink (around pH 6.0 - 7.0)</span>. <br><br>In the middle, between lower pH and higher pH soils, we see <span style ="border-bottom:1px solid #9258e8;">purple hydrangeas (around pH 5.0 - 6.0)</span>.</p>
+
+        
+          </div>
+          <div class="step" id="step4">
+            <p>A few hydrangeas were in pots instead of in the ground. These were <span style ="border-bottom:1px solid #fc48bd;">pinker than the rest</span>, indicating an average soil pH of 6.8. <br><br>
+            Potted hydrangeas may skew pinker since New York City tap water (the same known for expertly rising bagel dough) recorded an average pH of 7.3, based on NYC's 2024 drinking water report.<br><br>
+            Potted plants require more manual watering, and potted soil's pH raises more quickly in response to the pH of its added water.
+          </div>
+
+          <div class="step" id="step5">
+          <p>The rest of the hydrangeas, planted in the ground, had an approximate average soil pH of 5.3, with an average <span style ="border-bottom:1px solid #aaa6f9;">purple-y blue flower</span>. <br><br> This area of Brooklyn seems to have fairly acidic soil. </p>
+          </div>
+        </div>
+      </section>
+
+      <p>Prospect Place's acidic average soil pH rings true to USA regional soil pH estimates, although there's a lot of variation in soil pH locally. Soil pH is determined in part by climate. Rainier, moister regions like the Northeast (including Brooklyn), the Southeast and the Pacific Northwest generally have more acidic (lower pH) soil. Dryer areas like the West and Southwest have more alkaline (higher pH) soil. </p>
+<p>
+      <img src="usamap.png" style="width:100%;">
+    </p>
+      <p>Soil pH is also determined by the underlying rock beneath the soil. Low-pH granite rock in the East creates more acidic soil, while high-pH limestone and shale in the West creates more alkaline soil. <br><br>
+    <h2>What rocks lie beneath Prospect Place's soil? </h2> 
+
+
+    <p>According to the Urban Soil Institute, the area of Brooklyn around Prospect Place is primarily pavement and buildings, with a <b>till substratum</b> soil type. Soil around pavement and buildings is prone to manmade chemical disturbances from road salts and concrete, but these disturbances are alkaline in nature and tend to increase overall soil pH. This raised pH doesn't match our hydrangeas' lower soil pH.
+    <br><br>I was surprised to find that till substratum is also known as glacial till - sediment deposited from a glacier. Glacial sediment tends to create soil with lower pH. <br><br>
+    New York City was built on the precipice of the Laurentide ice sheet that existed some 20,000 years ago. Around 13,000 years ago, this ice sheet melted, with its terminal moraine (or end of the ice sheet) landing along the path of the hydrangeas on Prospect Place, and depositing glacial till there.
+    <img src="icesheet.png" style="width:100%;">
+
+    This glacial till is as deep as 10-30 meters beneath the surface of Brooklyn's soil, via the New York State Museum. With the amount of human disturbance in New York City soil, it's difficult to decisively attribute 20,000 year old glaciers directly to today's soil pH. 
+    <br><br>All the same, it's fascinating to think of hydrangeas broadcasting some 20,000 year old soil information through their blooms. What do the flowers around you say about the earth beneath your feet?
+    </p>
+
+
+    <script>
+
+      
+    /* Scrollytelling code goes under here */
+
+      // Code for the Photo Div #1 (aka #scrollyPhoto1)
+        
+        // Entering Step One
+      d3.select("#step1").on('stepin',function(e) {
+        console.log("We've arrived at STEP ONE in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "hydrangeapartial2.png");
+      })
+
+        // Entering Step Two
+        d3.select("#step2").on('stepin',function(e) {
+        console.log("We've arrived at STEP TWO in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "hydrangeafullnopH.png");
+      })
+
+       // Entering Step Three
+       d3.select("#step3").on('stepin',function(e) {
+        console.log("We've arrived at STEP Three in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "hydrangeafullwithpH.png");
+      })
+
+
+       // Entering Step Four
+       d3.select("#step4").on('stepin',function(e) {
+        console.log("We've arrived at STEP Four in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "hydrangeapotted.png");
+      })
+
+
+       // Entering Step Five
+       d3.select("#step5").on('stepin',function(e) {
+        console.log("We've arrived at STEP Four in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "hydrangeaunpotted.png");
+      })
+
+
+
+    </script>
+
+<script>
+    const scroller = scrollama();
+
+	scroller
+		.setup({
+			step: "#scrolly .scrolly-overlay .step",
+			offset: 0.5,
+			debug: false
+		})
+		.onStepEnter(function({ element, index, direction}) {
+			const event = new CustomEvent('stepin', { detail: { direction: direction } })
+			element.dispatchEvent(event); 
+		})
+		.onStepExit(function({ element, index, direction }) {
+			const event = new CustomEvent('stepout', { detail: { direction: direction } })
+			element.dispatchEvent(event);
+		});
+
+	window.addEventListener("resize", scroller.resize);
+    </script>
+
+
+    <!-- ai2html resizer script -->
+
+<script type="text/javascript">
+  (function() {
+      // only want one resizer on the page
+      if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+      document.documentElement.className += " g-resizer-v3-init";
+      // require IE9+
+      if (!("querySelector" in document)) return;
+      function resizer() {
+          var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+              widthById = {};
+          elements.forEach(function(el) {
+              var parent = el.parentNode,
+                  width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                  minwidth = el.getAttribute("data-min-width"),
+                  maxwidth = el.getAttribute("data-max-width");
+              widthById[parent.id] = width;
+
+              if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                  el.style.display = "block";
+              } else {
+                  el.style.display = "none";
+              }
+          });
+          try {
+              if (window.parent && window.parent.$) {
+                  window.parent.$("body").trigger("resizedcontent", [window]);
+              }
+              if (window.require) {
+                  require(['foundation/main'], function() {
+                      require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+                          AppCommunicator.triggerResize();
+                      });
+                  });
+              }
+          } catch(e) { console.log(e); }
+      }
+
+      document.addEventListener('DOMContentLoaded', resizer);
+      // feel free to replace throttle with _.throttle, if available
+      window.addEventListener('resize', throttle(resizer, 200));        
+
+      function throttle(func, wait) {
+          // from underscore.js
+          var _now = Date.now || function() { return new Date().getTime(); },
+              context, args, result, timeout = null, previous = 0;
+          var later = function() {
+              previous = _now();
+              timeout = null;
+              result = func.apply(context, args);
+              if (!timeout) context = args = null;
+          };
+          return function() {
+              var now = _now(), remaining = wait - (now - previous);
+              context = this;
+              args = arguments;
+              if (remaining <= 0 || remaining > wait) {
+                  if (timeout) {
+                      clearTimeout(timeout);
+                      timeout = null;
+                  }
+                  previous = now;
+                  result = func.apply(context, args);
+                  if (!timeout) context = args = null;
+              } else if (!timeout && options.trailing !== false) {
+                  timeout = setTimeout(later, remaining);
+              }
+              return result;
+          };
+      }
+
+     
+  })();
+</script>
+
+  </body>
+</html>
