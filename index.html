@@ -15,15 +15,43 @@
         font-family: Spectral, georgia, 'Times New Roman', Times, serif;
       }
 
+      .row {
+          display: flex;
+          flex-direction: row;
+          align-items:center;
+        }
+
+
+    .column {
+        flex: 50%;
+        float:left;
+      }
 
       h1{
         max-width: 50%;
         margin: 8rem auto 6rem auto;
-        font-size:56px;
+        font-size: 3rem;
         font-family: Syne, Helvetica, Arial, sans-serif;
         font-weight:700;
         color: #aaa6f9;
         }
+
+
+        @media (max-width: 1100px) {
+          h1 {font-size:2.5rem;}
+ 
+  }
+
+        @media (max-width: 800px) {
+          h1 {font-size:2rem;}
+ 
+  }
+  @media (max-width: 900px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
 
         h2{
           font-size:24px;
@@ -39,6 +67,13 @@
         font-family: Spectral, georgia, 'Times New Roman', Times, serif;
         margin: 0 auto 2rem auto;
         font-size: 19px;
+      }
+
+      p a{
+        color:#608bfb;
+        text-transform:lowercase;
+        font-size:16px;
+        font-weight:400;
       }
       
       
@@ -88,6 +123,14 @@
         border: black;
       }
 
+    .byline {
+        color:#bbb;
+        font-size:16px;
+        font-family: Spectral, georgia, 'Times New Roman', Times, serif; 
+        font-weight:400;
+
+      }
+
       .photoDiv {
         width: 65%;
         margin-right: 0px;
@@ -133,8 +176,19 @@
   <body>
 
   <p></p>
-  <h1><img src="photohydrangea.png" style="max-width:300px; float:left; margin-right: 3rem;">
-    What the flowers around us say about the earth beneath our feet</h1>
+  <h1>
+
+    <div class="row">
+      <div class="column">
+        <img src="photohydrangea.png" style="float:left; max-width:300px; margin-right: 2rem; margin-bottom: 2rem">
+      </div>
+      <div class="column">
+        What the flowers around us say about the earth beneath our feet
+      </div>
+    </div>
+    </h1>
+
+    <p><span class="byline">By: Meagan Hughes</span></p>
 
     <p>
   In mid-June, the streets of Brooklyn fill with colorful spheres of petals, ranging from <span style ="border-bottom:1px solid #608bfb;">cornflower blue</span> to <span style ="border-bottom:1px solid #9258e8;">violet</span> to <span style ="border-bottom:1px solid #fc48bd;">neon pink</span>.  </p>
@@ -154,11 +208,11 @@
 
         <div class="scrolly-overlay">
           <div class="step" id="step1">
-            <p>I walked down Prospect Place, a few blocks north of Prospect Park, to document the variety of colors that hydrangea petals flaunt. What's the underlying logic that decides the colors of this faerie-hued display?</p>
+            <p>I walked down Prospect Place, a few blocks north of Prospect Park, to track the variety of hydrangea colors in my neighborhood. What underlying logic determines the hues of this cotton candy display?</p>
           </div>
           <div class="step" id="step2">
             <p>The pink, purple or blue hue of these blooms are determined by the amount of anthocyanin pigment in the petals - which are actually "sepals", modified petals. Anthocyanin levels are determined by the concentration of aluminum ions that the hydrangea's roots can absorb through their soil. 
-              <br><br>Aluminum ions are correlated with soil pH - which tells us whether soil is acidic, neutral, or alkaline. In this sense, hydrangeas can be used as a <b>literal litmus test.</b></p>
+              <br><br>Aluminum ions are correlated with soil pH - which tells us whether soil is acidic, neutral, or alkaline. In this sense, hydrangeas can be seen as a <i>literal litmus test.</i></p>
             </p>
           </div>
           <div class="step" id="step3">
@@ -168,7 +222,7 @@
           </div>
           <div class="step" id="step4">
             <p>A few hydrangeas were in pots instead of in the ground. These were <span style ="border-bottom:1px solid #fc48bd;">pinker than the rest</span>, indicating an average soil pH of 6.8. <br><br>
-            Potted hydrangeas may skew pinker since New York City tap water (the same known for expertly rising bagel dough) recorded an average pH of 7.3, based on NYC's 2024 drinking water report.<br><br>
+            Potted hydrangeas may skew pinker since New York City tap water (the same known for expertly rising bagel dough) has a pH of 7.3 on average, based on NYC's 2024 drinking water report.<br><br>
             Potted plants require more manual watering, and potted soil's pH raises more quickly in response to the pH of its added water.
           </div>
 
@@ -178,7 +232,7 @@
         </div>
       </section>
 
-      <p>Prospect Place's acidic average soil pH rings true to USA regional soil pH estimates, although there's a lot of variation in soil pH locally. Soil pH is determined in part by climate. Rainier, moister regions like the Northeast (including Brooklyn), the Southeast and the Pacific Northwest generally have more acidic (lower pH) soil. Dryer areas like the West and Southwest have more alkaline (higher pH) soil. </p>
+      <p>Prospect Place's acidic average soil pH tracks to USA regional soil pH estimates, although there's a lot of variation in soil pH locally. Soil pH is determined in part by climate. Rainier, moister regions like the Northeast (including Brooklyn), the Southeast and the Pacific Northwest generally have more acidic (lower pH) soil. Dryer areas like the West and Southwest have more alkaline (higher pH) soil. </p>
 <p>
       <img src="usamap.png" style="width:100%;">
     </p>
@@ -186,15 +240,34 @@
     <h2>What rocks lie beneath Prospect Place's soil? </h2> 
 
 
-    <p>According to the Urban Soil Institute, the area of Brooklyn around Prospect Place is primarily pavement and buildings, with a <b>till substratum</b> soil type. Soil around pavement and buildings is prone to manmade chemical disturbances from road salts and concrete, but these disturbances are alkaline in nature and tend to increase overall soil pH. This raised pH doesn't match our hydrangeas' lower soil pH.
+    <p>According to the Urban Soil Institute, the area of Brooklyn around Prospect Place is primarily pavement and buildings, with a <b>till substratum</b> soil type. Soil around pavement and buildings is prone to manmade chemical disturbances from road salts and concrete, but these disturbances are alkaline in nature and tend to increase overall soil pH. This potential for higher pH didn't seem to noticeably skew Prospect Place hydrangeas' lower soil pH.
     <br><br>I was surprised to find that till substratum is also known as glacial till - sediment deposited from a glacier. Glacial sediment tends to create soil with lower pH. <br><br>
-    New York City was built on the precipice of the Laurentide ice sheet that existed some 20,000 years ago. Around 13,000 years ago, this ice sheet melted, with its terminal moraine (or end of the ice sheet) landing along the path of the hydrangeas on Prospect Place, and depositing glacial till there.
-    <img src="icesheet.png" style="width:100%;">
+    New York City was built on the precipice of the Laurentide ice sheet that existed some 20,000 years ago. Around 13,000 years ago, this ice sheet melted, with its <i>terminal moraine</i> (or end of the ice sheet) landing along the path of the hydrangeas on Prospect Place. <br><br>The terminal moraine accumulates glacial debris as the ice sheet travels, and when the ice sheet melts, it deposits acidic glacial till soil along its path.
+    <img src="icesheet.png" style="width: 100%; min-width:300px; margin-top: 3rem;margin-bottom: 3rem;">
 
-    This glacial till is as deep as 10-30 meters beneath the surface of Brooklyn's soil, via the New York State Museum. With the amount of human disturbance in New York City soil, it's difficult to decisively attribute 20,000 year old glaciers directly to today's soil pH. 
-    <br><br>All the same, it's fascinating to think of hydrangeas broadcasting some 20,000 year old soil information through their blooms. What do the flowers around you say about the earth beneath your feet?
+    This glacial till is as deep as 10-30 meters beneath the surface of Brooklyn's soil, via the New York State Museum. Still, with the amount of human disturbance in New York City soil, it's tricky to definitively attribute 20,000 year old glaciers directly to today's soil pH. 
+    <br><br>All the same, it's fascinating to think of hydrangeas broadcasting some 20,000 year old soil information through their blooms. <br><br>What do the flowers around you say about the earth beneath your feet?
     </p>
 
+
+    <h2 style="color:#ddd; margin-top: 5rem;">Sources</h2>
+    <p style="font-size:16px;color:#bbbbbb;margin-bottom:5rem;">
+      Hydrangea colors, anthocyanin, aluminum, and pH (<a href="https://www.americanscientist.org/article/curious-chemistry-guides-hydrangea-colors">Link</a>)
+      <br>NYC: Brooklyn soil (<a href="https://www.soilandwater.nyc/files/8935eaa76/rss_postermap_200dpi.pdf">Link</a>)
+      <br>NYC drinking water 2024 report (<a href="https://www.nyc.gov/assets/dep/downloads/pdf/water/drinking-water/drinking-water-supply-quality-report/2024-drinking-water-supply-quality-report.pdf">Link</a>)
+      <br>Determining factors of regional pH (<a href="https://www.earthsciencegrowing.com/expert-advice/an-overview-of-the-general-soil-ph-by-region-in-the-u-s/">Link</a>)
+      <br>National approximate soil pH data (<a href="https://github.com/aramcharan/US_SoilGrids100m?tab=readme-ov-file">Data</a>)
+      (<a href="https://scholarsphere.psu.edu/resources/ea4b6c45-9eba-4b89-aba6-ff7246880fb1">Methodology</a>)
+      <br>Laurentide ice sheet in New York (<a href="https://cp.copernicus.org/articles/20/2167/2024/cp-20-2167-2024-assets.html
+      ">link</a>)
+      <br>New York State Museum glacial maps (<a href="https://www.nysm.nysed.gov/publications/map-chart-series
+      ">link</a>)
+      <br>
+
+
+
+
+    </p>
 
     <script>
 
